@@ -13,7 +13,10 @@ io.on('connection',socket => {
     else{
       socket.to(room).emit('recieve-message',message);
     }
-    console.log(message);
+    
+  })
+  socket.on('join-room',(room)=>{
+    socket.join(room);
   })
 })
 
